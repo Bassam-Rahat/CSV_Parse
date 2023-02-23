@@ -14,5 +14,8 @@ namespace CSV_Parse
 
         [CsvColumn(Name = "region", FieldIndex = 3)]
         public string Region { get; set; }
+
+        [CsvColumn(Name = "DateTime", FieldIndex = 4)]
+        public string DateTime { get; set; }
     }
 }

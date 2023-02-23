@@ -53,13 +53,22 @@ namespace CSV_Parse
                 Console.Write("Enter region: ");
                 var region = Console.ReadLine();
 
+                Console.Write("Enter date: ");
+                string userInput = Console.ReadLine();
+                DateTime dateTime;
+                while (!DateTime.TryParse(userInput, out dateTime))
+                {
+                    Console.Write("Invalid date, please enter a valid date: ");
+                    userInput = Console.ReadLine();
+                }
+
                 var country = new Country
                 {
                     CountryName = countryName,
                     CountryCode = countryCode,
-                    Region = region
+                    Region = region,
+                    DateTime = userInput
                 };
-
                 countryList.Add(country);
             }
 
